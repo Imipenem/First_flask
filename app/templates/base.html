@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title> My titel is {{title}}</title>
+    {% else %}
+    <title>This is a default title</title>
+    {% endif %}
+</head>
+<body>
+    <div>Menu:
+        <a href="/index">FürIndex</a>
+        <a href="/login">FürLogin</a>
+    </div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
