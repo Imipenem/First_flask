@@ -17,4 +17,4 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['philipp_ehm@protonmail.com']
 
-    POSTS_PER_PAGE = 3
+    POSTS_PER_PAGE = 25  # vars like this should be declared in a confiq file for maintenance reasons
