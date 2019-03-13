@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, PasswordField, SubmitField, TextAreaField
-from wtforms.validators import DataRequired, Regexp, ValidationError, Email, EqualTo
+from wtforms.validators import DataRequired, Regexp, ValidationError, Email, EqualTo, Length
 from app.model.models import User
 
 # small invalid length validator
@@ -62,3 +62,7 @@ class EditProfileForm(FlaskForm):
             if user is not None:
                 raise ValidationError('This username is already taken. Please use a different name!')
 
+
+class PostForm(FlaskForm):
+    post = TextAreaField('What´s on your mind', validators=[DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField('Post')
